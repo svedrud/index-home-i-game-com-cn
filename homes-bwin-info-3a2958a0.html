@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bwin · 稳定入口与场景说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafafa;
+            color: #1e1e1e;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 1.8rem 1.5rem 3.5rem;
+        }
+
+        /* 导航 */
+        .top-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.6rem 0 1.2rem;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 2.2rem;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 0.02em;
+            color: #1e1e1e;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #3a3a3a;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        /* hero 区域 */
+        .hero {
+            margin-bottom: 2.8rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.5rem;
+            line-height: 1.25;
+        }
+
+        .hero p {
+            color: #444;
+            font-size: 1rem;
+            max-width: 640px;
+        }
+
+        /* 介绍段 */
+        .intro-block {
+            margin-bottom: 2.5rem;
+        }
+
+        .intro-block p {
+            margin-bottom: 1rem;
+        }
+
+        /* 场景卡片 */
+        .scenes {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .scene-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.5rem 1.8rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eee;
+        }
+
+        .scene-card h3 {
+            font-size: 1.2rem;
+            font-weight: 550;
+            margin-bottom: 0.5rem;
+        }
+
+        .scene-card p {
+            color: #3a3a3a;
+        }
+
+        .scene-card .tag {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #2c2c2c;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.1rem 0.7rem;
+            border-radius: 20px;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* 常见说明 */
+        .faq-compact {
+            margin-bottom: 2.5rem;
+            padding: 1.2rem 0;
+            border-top: 1px solid #eaeaea;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .faq-compact h2 {
+            font-size: 1.15rem;
+            font-weight: 550;
+            margin-bottom: 0.8rem;
+        }
+
+        .faq-item {
+            margin-bottom: 0.7rem;
+        }
+
+        .faq-item strong {
+            font-weight: 550;
+            display: block;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-item p {
+            color: #444;
+            margin: 0;
+        }
+
+        /* 链接嵌入句 */
+        .mention-link {
+            background: #f6f6f6;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            border-left: 3px solid #ccc;
+        }
+
+        .mention-link a {
+            color: #1e1e1e;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            font-weight: 500;
+        }
+
+        .mention-link a:hover {
+            color: #000;
+            text-decoration-thickness: 2px;
+        }
+
+        /* 底部 */
+        .footer-note {
+            font-size: 0.8rem;
+            color: #7a7a7a;
+            border-top: 1px solid #eaeaea;
+            padding-top: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 480px) {
+            .page {
+                padding: 1rem 1rem 2.5rem;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .nav-links {
+                gap: 0.9rem;
+                font-size: 0.8rem;
+            }
+            .scene-card {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+        <span class="logo">bwin&nbsp;·</span>
+        <ul class="nav-links">
+            <li><a href="#intro">介绍</a></li>
+            <li><a href="#scenes">场景</a></li>
+            <li><a href="#faq">说明</a></li>
+        </ul>
+    </nav>
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>稳定入口，清晰说明</h1>
+        <p>围绕 <strong>bwin</strong> 整理了一份轻量导航，包含服务方向、常见场景以及使用提示。页面保持简洁，便于快速了解。</p>
+    </div>
+
+    <!-- 介绍段 -->
+    <div class="intro-block" id="intro">
+        <p>bwin 是一个长期运营的线上平台，面向有稳定访问需求的用户。本次页面从入口稳定性与信息可读性出发，归纳了三个典型使用场景，并在常见说明部分回答了几个基础问题。所有内容均基于公开信息整理，不做引导或承诺。</p>
+        <p>如果你希望直接访问服务，可以在下方说明中找到链接地址。整个页面旨在提供一份干净、中立的参考，没有多余修饰。</p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes" id="scenes">
+        <div class="scene-card">
+            <span class="tag">场景一 · 日常访问</span>
+            <h3>通过固定地址保持连接</h3>
+            <p>许多用户会选择将常用地址存入浏览器书签，或使用备注记录。保持一个稳定入口能减少每次查找的时间，尤其适合需要规律使用的场景。</p>
+        </div>
+        <div class="scene-card">
+            <span class="tag">场景二 · 环境切换</span>
+            <h3>不同设备与网络下的适应</h3>
+            <p>当工作环境、家庭网络或移动设备之间切换时，一个清晰的入口说明能帮助快速恢复访问。建议在常用设备上预先确认地址。</p>
+        </div>
+        <div class="scene-card">
+            <span class="tag">场景三 · 信息核对</span>
+            <h3>用于确认当前有效地址</h3>
+            <p>部分用户会将此页面作为参考，在需要时打开核对当前使用的链接是否准确。页面内容保持稳定，不频繁变动。</p>
+        </div>
+    </div>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <div class="faq-compact" id="faq">
+        <h2>常见说明</h2>
+        <div class="faq-item">
+            <strong>如何找到当前可用地址？</strong>
+            <p>可以直接参考本页提供的链接。地址若有变化，本页会同步更新。建议以页面内容为准，不要轻信非来源信息。</p>
+        </div>
+        <div class="faq-item">
+            <strong>页面中链接的用途是什么？</strong>
+            <p>页面中有一个指向服务地址的链接，文本标注为 <strong>bwin</strong>，可供直接使用。除此之外未放置其他外链。</p>
+        </div>
+        <div class="faq-item">
+            <strong>是否需要特殊工具？</strong>
+            <p>一般情况下，普通网络环境即可访问。个别地区可能存在限制，请根据当地网络情况自行判断。</p>
+        </div>
+    </div>
+
+    <!-- 自然嵌入链接的句子 (唯一a标签，可见文本严格为 bwin) -->
+    <div class="mention-link">
+        如果你想直接访问，可以通过此链接进入：<a href="https://homes-bwin.com">bwin</a>。该链接是当前页面提供的唯一入口，请妥善保存。
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+        本页面为信息说明页，内容仅供稳定参考，不构成任何指引或承诺。更新频率低，建议定期确认。
+    </div>
+
+</div>
+</body>
+</html>
