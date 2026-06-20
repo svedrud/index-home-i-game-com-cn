@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bwin · 信息索引页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f7f3ed;
+            font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+            color: #2e2a26;
+            line-height: 1.75;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #fcfaf6;
+            padding: 2.8rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04);
+        }
+
+        h1 {
+            font-weight: 400;
+            font-size: 2.2rem;
+            letter-spacing: 0.02em;
+            border-left: 5px solid #b8a692;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            color: #3d352e;
+        }
+
+        .subhead {
+            font-size: 1.05rem;
+            color: #6b5f55;
+            margin-bottom: 2.2rem;
+            border-bottom: 1px dashed #d9cfc4;
+            padding-bottom: 1.2rem;
+        }
+
+        .intro-card {
+            background: #f3efe9;
+            padding: 1.8rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 2.2rem;
+        }
+
+        .intro-card p {
+            font-size: 1.04rem;
+        }
+
+        .label-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.8rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .label-item {
+            background: #e8e1d8;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            color: #3f3831;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+
+        .info-box {
+            background: #f8f4ef;
+            border-radius: 20px;
+            padding: 1.5rem 1.6rem;
+            border: 1px solid #e2d9cf;
+        }
+
+        .info-box h3 {
+            font-weight: 400;
+            font-size: 1.15rem;
+            border-bottom: 1px solid #d6cbbc;
+            padding-bottom: 0.4rem;
+            margin-bottom: 0.9rem;
+            color: #4a4139;
+            letter-spacing: 0.04em;
+        }
+
+        .info-box ul {
+            list-style: none;
+        }
+
+        .info-box li {
+            padding: 0.25rem 0;
+            font-size: 0.98rem;
+            position: relative;
+            padding-left: 1.3rem;
+        }
+
+        .info-box li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #8d7e6f;
+            font-weight: bold;
+        }
+
+        .quote-block {
+            background: #efe8e0;
+            padding: 1.4rem 2rem;
+            border-radius: 30px 12px 30px 12px;
+            margin: 2rem 0 1.8rem;
+            font-style: italic;
+            border-left: 4px solid #b3a18b;
+        }
+
+        .quote-block p {
+            color: #3e3730;
+            font-size: 1rem;
+        }
+
+        .faq-mini {
+            margin: 2rem 0;
+        }
+
+        .faq-mini details {
+            background: #f6f2ec;
+            margin-bottom: 0.7rem;
+            padding: 0.6rem 1.4rem;
+            border-radius: 40px;
+            border: 1px solid #e1d7cc;
+        }
+
+        .faq-mini summary {
+            cursor: pointer;
+            font-weight: 500;
+            color: #3d352e;
+            padding: 0.2rem 0;
+            font-size: 1rem;
+        }
+
+        .faq-mini details[open] summary {
+            padding-bottom: 0.6rem;
+        }
+
+        .faq-mini details p {
+            padding: 0.2rem 0 0.6rem 0.3rem;
+            color: #555048;
+            font-size: 0.95rem;
+        }
+
+        .remark {
+            background: #f0ebe3;
+            padding: 1.2rem 1.8rem;
+            border-radius: 18px;
+            font-size: 0.96rem;
+            color: #4b443d;
+            margin-top: 2rem;
+        }
+
+        .remark strong {
+            font-weight: 500;
+            color: #2f2a25;
+        }
+
+        .footer-note {
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 0.88rem;
+            color: #8b7f72;
+            border-top: 1px solid #ddd3c8;
+            padding-top: 1.6rem;
+        }
+
+        a {
+            color: #5f5142;
+            text-decoration: none;
+            border-bottom: 1px dotted #b8aa9a;
+            transition: border 0.15s;
+        }
+
+        a:hover {
+            border-bottom: 2px solid #7b6b5a;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.8rem 1.2rem;
+            }
+
+            h1 {
+                font-size: 1.7rem;
+                padding-left: 0.8rem;
+            }
+
+            .grid-2col {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .intro-card {
+                padding: 1.3rem 1.2rem;
+            }
+
+            .quote-block {
+                padding: 1rem 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>bwin · 信息索引</h1>
+    <div class="subhead">一个偏向知识库风格的引导页，整理相关说明与常用提示。</div>
+
+    <div class="intro-card">
+        <p>本页作为面向 <a href="https://cnsite--bwin.com">bwin</a> 的辅助入口，主要汇总平台相关的常⻅信息与使用背景，方便浏览者快速了解基本面貌。内容围绕站点功能、访问注意事项以及常见疑惑展开，全部基于客观整理。</p>
+    </div>
+
+    <div class="label-group">
+        <span class="label-item">稳定访问</span>
+        <span class="label-item">页面说明</span>
+        <span class="label-item">环境提示</span>
+        <span class="label-item">浏览参考</span>
+    </div>
+
+    <div class="grid-2col">
+        <div class="info-box">
+            <h3>站点特点</h3>
+            <ul>
+                <li>界面以信息展示为主，结构清晰</li>
+                <li>内容更新保持一定频率</li>
+                <li>适配多种设备与浏览器窗口</li>
+                <li>链接均为直接跳转，无中间页</li>
+            </ul>
+        </div>
+        <div class="info-box">
+            <h3>使用场景</h3>
+            <ul>
+                <li>日常浏览与信息查阅</li>
+                <li>作为收藏夹中的固定参考</li>
+                <li>在安全网络环境下打开</li>
+                <li>快速了解平台基础布局</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="quote-block">
+        <p>“保持一个固定且清晰的入口，能减少每次寻找的时间。把 <a href="https://cnsite--bwin.com">bwin</a> 当作信息起点，而不是终点。”</p>
+    </div>
+
+    <div class="faq-mini">
+        <details>
+            <summary>▸ 访问时需要注意什么？</summary>
+            <p>建议使用主流浏览器，并确保网络环境稳定。若页面加载缓慢，可尝试刷新或切换连接方式。部分功能可能因地区有所差异，以实际显示为准。</p>
+        </details>
+        <details>
+            <summary>▸ 这个页面和主站是什么关系？</summary>
+            <p>本页是独立的介绍性索引页，不直接代替主站功能，只提供辅助说明和总结。主站内容请通过上方链接直接前往。</p>
+        </details>
+        <details>
+            <summary>▸ 是否包含推广或第三方内容？</summary>
+            <p>本页仅做信息汇总，不包含推广链接、诱导按钮或自动跳转。所有内容均基于客观描述，无隐藏规则。</p>
+        </details>
+    </div>
+
+    <div class="remark">
+        <strong>提示：</strong> 若想直接浏览主站，可通过句子中的 <a href="https://cnsite--bwin.com">bwin</a> 链接前往。建议将常用页面添加至书签，以提升访问效率。本页不定期更新说明内容，保持信息有效。
+    </div>
+
+    <div class="footer-note">
+        — 知识库入口式页面 · 温和说明 —
+    </div>
+
+</div>
+</body>
+</html>
